@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>くじ引きアプリ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      font-size: 36px;
+    }
+
+    #result {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    #kuji-image {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>くじ引きアプリ</h1>
+
+  <button onclick="drawKuji()">くじを引く</button>
+
+  <div id="result"></div>
+
+  <img id="kuji-image" src="kuji.png" alt="くじ引き画像">
+
+  <script>
+    function drawKuji() {
+      // くじの種類
+      var kujiList = ["大吉", "中吉", "小吉", "凶"];
+
+      // ランダムにくじを選ぶ
+      var result = kujiList[Math.floor(Math.random() * kujiList.length)];
+
+      // 結果を表示
+      document.getElementById("result").innerHTML = "くじの結果は「" + result + "」です！";
+    }
+  </script>
+
+</body>
+</html>
